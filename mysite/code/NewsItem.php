@@ -22,6 +22,12 @@ class NewsItem extends Page
         $fields -> addFieldToTab('Root.Other', TextField::create('Subtitle', 'A Subtitle for this Page'));
         $fields -> addFieldToTab('Root.Other', TextField::create('SubDescription', 'A SubDescription for this Page'));
         $fields -> addFieldToTab('Root.Attachments', $photo = UploadField::create('Photo'));
+        $fields->addFieldToTab('Root.MenuItems', GridField::create(
+            'MenuItems',
+            'Menu Items on this Page',
+            $this->MenuItems(),
+            GridFieldConfig_RecordEditor::create()
+        ));
 
         $photo->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpg', 'jpeg'));
         return $fields;

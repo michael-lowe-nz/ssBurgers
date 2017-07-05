@@ -13,6 +13,21 @@ class MenuItem extends DataObject
         'NewsItem' => 'NewsItem'
     );
 
+    private static $summary_fields = array (
+        'Name' => 'Name of Menu Item',
+        'Price' => 'Retail Price (incl. GST)',
+        'Description' => 'Description',
+        'GridThumbnail' => 'Image'
+    );
+
+    public function getGridThumbnail() {
+        if($this->Photo()->exists()) {
+            return $this->Photo()->SetWidth(100);
+        }
+
+        return '(no image)';
+    }
+
     public function getCMSFields() {
         $fields = FieldList::create(
             TextField::create('Name'),
