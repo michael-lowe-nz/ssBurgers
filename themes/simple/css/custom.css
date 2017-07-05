@@ -2,3 +2,22 @@
     height: 50px;
     margin: 0 20px;
 }
+
+.menu-items {
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu-item {
+    width: 200px;
+    border: solid 2px grey;
+    padding: 40px;
+}
+
+.menu-item:hover {
+    background-color: #e4e4e4;
+}
+
+.menu-item img {
+    border: none;
+}
