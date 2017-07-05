@@ -8,6 +8,10 @@ class NewsItem extends Page
         'SubDescription' => 'Text',
     );
 
+    private static $has_many = array(
+        'MenuItems' => 'MenuItem'
+    );
+
     private static $has_one = array(
         'Photo' => 'Image',
     );
@@ -22,4 +26,8 @@ class NewsItem extends Page
         $photo->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpg', 'jpeg'));
         return $fields;
     }
+}
+
+class RegionsPage_Controller extends Page_Controller {
+
 }

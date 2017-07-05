@@ -10,6 +10,7 @@ class MenuItem extends DataObject
 
     private static $has_one = array(
         'Photo' => 'Image',
+        'NewsItem' => 'NewsItem'
     );
 
     public function getCMSFields() {
