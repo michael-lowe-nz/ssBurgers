@@ -8,9 +8,8 @@ class Supplier extends DataObject
         'Description' => 'Text',
     );
 
-
-    private static $belongs_many_many = array(
-        'NewsItem' => 'NewsItem'
+    private static $has_one = array(
+        'Photo' => 'Image',
     );
 
     private static $summary_fields = array (

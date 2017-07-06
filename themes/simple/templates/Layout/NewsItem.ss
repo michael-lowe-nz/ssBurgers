@@ -14,4 +14,10 @@
     $Layout
     $Form
     $CommentsForm
+    <h3>Our Suppliers:</h3>
+    <div>
+        <% loop $Suppliers %>
+            <li>$Name, $Location</li>
+        <% end_loop %>
+    </div>
 </div>
