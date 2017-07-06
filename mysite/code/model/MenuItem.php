@@ -3,7 +3,7 @@
 class MenuItem extends DataObject
 {
     private static $db = array(
-        'Name' => 'Text',
+        'Name' => 'Varchar(50)',
         'Price' => 'Text',
         'Description' => 'Text',
     );
