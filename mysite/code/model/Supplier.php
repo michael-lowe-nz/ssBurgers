@@ -3,13 +3,17 @@
 class Supplier extends DataObject
 {
     private static $db = array(
-        'Name' => 'Text',
-        'Location' => 'Text',
-        'Description' => 'Text',
+        'Name' => 'Varchar(50)',
+        'Location' => 'Varchar(50)',
+        'Description' => 'Varchar(50)',
     );
 
     private static $has_one = array(
         'Photo' => 'Image',
+    );
+
+    private static $belongs_many_many = array(
+        "RestaurantArticles" => "RestaurantArticle"
     );
 
     private static $summary_fields = array (

@@ -13,7 +13,7 @@
     </article>
     $Layout
     $Form
-    $CommentsForm
+    $CommentForm
     <h3>Our Suppliers:</h3>
     <div>
         <% loop $Suppliers %>

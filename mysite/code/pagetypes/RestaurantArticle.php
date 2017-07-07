@@ -1,19 +1,15 @@
 <?php
 
-class NewsItem extends Page
+class RestaurantArticle extends Page
 {
     private static $db = array(
-        'Description' => 'Text',
-        'Subtitle' => 'Text',
-        'SubDescription' => 'Text',
+        'Description' => 'Varchar(50)',
+        'Subtitle' => 'Varchar(50)',
+        'SubDescription' => 'Varchar(50)',
     );
 
     private static $has_many = array(
         'MenuItems' => 'MenuItem',
-    );
-
-    private static $many_many = array(
-        'Suppliers' => 'Supplier'
     );
 
     private static $has_one = array(
@@ -33,24 +29,8 @@ class NewsItem extends Page
             $this->MenuItems(),
             GridFieldConfig_RecordEditor::create()
         ));
-        $fields->addFieldToTab('Root.Suppliers', GridField::create(
-            'Suppliers',
-            'Suppliers Used By Restaurant',
-            $this->Suppliers(),
-            GridFieldConfig_RecordEditor::create()
-        ));
-        $fields->addFieldToTab('Root.Suppliers', CheckboxSetField::create(
-            'Suppliers',
-            'Selected suppliers',
-            $this->Suppliers()->map('ID','Title')
-        ));
 
         $photo->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpg', 'jpeg'));
         return $fields;
     }
-}
-
-class RegionsPage_Controller extends Page_Controller
-{
-
 }

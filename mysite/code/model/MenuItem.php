@@ -10,7 +10,7 @@ class MenuItem extends DataObject
 
     private static $has_one = array(
         'Photo' => 'Image',
-        'NewsItem' => 'NewsItem'
+        'RestaurantArticle' => 'RestaurantArticle'
     );
 
     private static $summary_fields = array (
