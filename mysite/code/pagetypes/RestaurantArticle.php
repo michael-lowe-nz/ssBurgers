@@ -12,6 +12,10 @@ class RestaurantArticle extends Page
         'MenuItems' => 'MenuItem',
     );
 
+    private static $many_many = array(
+      'Suppliers' => 'Supplier'
+    );
+
     private static $has_one = array(
         'Photo' => 'Image',
     );
@@ -28,6 +32,11 @@ class RestaurantArticle extends Page
             'Menu Items on this Page',
             $this->MenuItems(),
             GridFieldConfig_RecordEditor::create()
+        ));
+        $fields->addFieldToTab('Root.Suppliers', CheckboxSetField::create(
+            'Suppliers',
+            'Suppliers Used',
+            $this->Parent()->Suppliers()->map('ID','Name')
         ));
 
         $photo->getValidator()->setAllowedExtensions(array('png', 'gif', 'jpg', 'jpeg'));

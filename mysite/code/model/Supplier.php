@@ -10,10 +10,11 @@ class Supplier extends DataObject
 
     private static $has_one = array(
         'Photo' => 'Image',
+        'Page' => 'Page'
     );
 
     private static $belongs_many_many = array(
-        "RestaurantArticles" => "RestaurantArticle"
+        'RestaurantArticles' => 'RestaurantArticle'
     );
 
     private static $summary_fields = array (
